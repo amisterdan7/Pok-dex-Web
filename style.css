@@ -1,0 +1,99 @@
+body {
+  background-color: aliceblue;
+  font-family: Arial, sans-serif;
+  margin: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.loading-container,
+.result-container,
+.error-container {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #1f2a44;
+  font-weight: 700;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(31, 42, 68, 0.2);
+  border-top-color: darkblue;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+button {
+  background-color: darkblue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 8px;
+
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  
+}
+
+.hidden {
+  display: none;
+}
+
+.types-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.type {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #e8eefc;
+  color: #1f2a44;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+result-container.hidden {
+  display: none;
+}
