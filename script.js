@@ -9,6 +9,8 @@ const errormessage = document.getElementById("error-message");
 const loadingArea = document.getElementById("loading-area");
 const defaultButtonLabel = searchButton.textContent;
 
+const linhaSepararPokebola = document.querySelector(".linha-separar-pokebola");
+
 function showLoading() {
   loadingArea.classList.remove("hidden");
   resultarea.classList.add("hidden");
@@ -57,7 +59,6 @@ async function PokemonData(pokemonName) {
 
     const data = await response.json();
     displayPokemonData(data);
-    
   } catch (error) {
     displayError(error.message || "Pokémon não encontrado.");
   } finally {
@@ -83,3 +84,5 @@ function displayError(message) {
   errorarea.classList.remove("hidden");
   errormessage.textContent = message;
 }
+
+

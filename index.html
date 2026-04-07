@@ -9,41 +9,55 @@
   </head>
   <body>
     <main class="container">
-      <header>
-        <h1>Pokédex Web</h1>
-        <p>Busque um Pokémon pelo nome ou ID</p>
-      </header>
+      <div class="parte-cima-da-pokebola">
 
-      <section class="search-container" id="search-container">
-        <input
-          type="text"
-          id="pokemon-input"
-          placeholder="Ex: Pikachu ou 25"
-          aria-label="Nome ou número do Pokémon"
-          required
-        />
-        <button id="search-button">Buscar</button>
-      </section>
+        <header>
+          <h1>Pokédex Web</h1>
+          <p>Busque um Pokémon pelo nome ou ID</p>
+        </header>
+  
+        <section class="search-container" id="search-container">
+          <input
+            type="text"
+            id="pokemon-input"
+            placeholder="Ex: Pikachu ou 25"
+            aria-label="Nome ou número do Pokémon"
+            required
+          />
+          <button id="search-button">Buscar</button>
+        </section>
 
-      <div
-        id="loading-area"
-        class="loading-container hidden"
-        aria-live="polite"
-        aria-busy="true"
-      >
-        <div class="spinner" aria-hidden="true"></div>
-        <p>Carregando...</p>
+
       </div>
 
-      <section id="result-area" class="result-container hidden">
-        <h2 id="pokemon-name"></h2>
-        <img id="pokemon-sprite" src="" alt="Sprite do Pokémon" />
-        <div id="pokemon-types" class="types-container"></div>
-      </section>
+      <div class="linha-separar-pokebola">
+        
+      </div>
+      
+      <div class="parte-baixa-da-pokebola">
 
-      <section id="error-area" class="error-container hidden">
-        <p id="error-message">Pokémon não encontrado. Tente novamente!</p>
-      </section>
+        <div
+          id="loading-area"
+          class="loading-container hidden"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Carregando...</p>
+        </div>
+  
+        <section id="result-area" class="result-container hidden">
+          <h2 id="pokemon-name"></h2>
+          <img id="pokemon-sprite" src="" alt="Sprite do Pokémon" />
+          <div id="pokemon-types" class="types-container"></div>
+        </section>
+  
+        <section id="error-area" class="error-container hidden">
+          <p id="error-message">Pokémon não encontrado. Tente novamente!</p>
+        </section>
+
+      </div>
+
     </main>
   </body>
 </html>
