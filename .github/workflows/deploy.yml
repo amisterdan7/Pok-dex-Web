@@ -22,9 +22,6 @@ jobs:
       - name: Fazer checkout do código
         uses: actions/checkout@v4
 
-      - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Preparar arquivos do site
         run: |
           mkdir -p public
