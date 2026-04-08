@@ -38,7 +38,7 @@ Você pode visualizar a aplicação em execução aqui:
 Este projeto foi desenvolvido seguindo os requisitos técnicos da disciplina de **Desenvolvimento de Aplicações Web (UC 07)**, com foco em:
 * Separação rigorosa de responsabilidades entre HTML, CSS e JavaScript.
 * Código limpo, indentado e livre de resíduos de depuração.
-* Navegação e performance otimizadas através de carregamento preguiçoso (*lazy loading*) de imagens.
+* Navegação e performance otimizadas através de carregamento de imagens.
 
 ---
 
