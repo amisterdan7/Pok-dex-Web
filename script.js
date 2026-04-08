@@ -7,9 +7,10 @@ const pokemonTypes = document.getElementById("pokemon-types");
 const errorarea = document.getElementById("error-area");
 const errormessage = document.getElementById("error-message");
 const loadingArea = document.getElementById("loading-area");
+const abilities = document.getElementById("abilities");
+const species = document.getElementById("species");
 const defaultButtonLabel = searchButton.textContent;
 
-const linhaSepararPokebola = document.querySelector(".linha-separar-pokebola");
 
 function showLoading() {
   loadingArea.classList.remove("hidden");
@@ -45,6 +46,7 @@ pokemonInput.addEventListener("keydown", (event) => {
   }
 });
 
+// Função para buscar os dados do Pokémon usando a API
 async function PokemonData(pokemonName) {
   showLoading();
 
@@ -66,17 +68,36 @@ async function PokemonData(pokemonName) {
   }
 }
 
+ 
+
 function displayPokemonData(data) {
   errorarea.classList.add("hidden");
   resultarea.classList.remove("hidden");
   pokemonName.textContent = data.name;
-  pokemonSprite.src = data.sprites.front_default;
+  const pokemonImageUrl =
+    data.sprites.other?.["official-artwork"]?.front_default ??
+    data.sprites.other?.home?.front_default ??
+    data.sprites.front_default;
+
+  pokemonSprite.src = pokemonImageUrl;
   pokemonSprite.alt = `Sprite de ${data.name}`;
+  pokemonSprite.loading = "lazy";
+  pokemonSprite.decoding = "async";
   pokemonTypes.innerHTML = data.types
     .map(
       (type) => `<span class="type ${type.type.name}">${type.type.name}</span>`,
     )
     .join("");
+
+
+  abilities.innerHTML = data.abilities
+    .map(
+      (ability) => `<span class="form-label"> Habilidade: ${ability.ability.name}</span>`,
+    )
+    .join("");
+  species.innerHTML = `<p class="form-label">Espécie: ${data.species.name}</p>`;
+  species.innerHTML += `<p class="form-label">Altura: ${data.height / 10} m</p>`;
+  species.innerHTML += `<p class="form-label">Peso: ${data.weight / 10} kg</p>`;
 }
 
 function displayError(message) {
